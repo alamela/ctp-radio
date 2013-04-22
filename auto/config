@@ -1,34 +1,30 @@
 #!/bin/sh
-BOOTAPPEND="locales=es_MX.UTF-8 keyboard-layout=latam"
+BOOTAPPEND="locales=es_AR.UTF-8 keyboard-layout=latam"
 
 # menu config
-LB_SYSLINUX_MENU_LIVE_ENTRY="Vivo"
+LB_SYSLINUX_MENU_LIVE_ENTRY="Radio"
 LB_SYSLINUX_MENU_MEMTEST_ENTRY="Verificar RAM"
 LB_SYSLINUX_MENU_LIVE_FAILSAFE_ENTRY="Preuba de fallos"
 
 export LB_SYSLINUX_MENU_LIVE_ENTRY LB_SYSLINUX_MENU_MEMTEST_ENTRY LB_SYSLINUX_MENU_LIVE_FAILSAFE_ENTRY
 
-MIRROR_DEBIAN="http://localhost:9999/debian"
-MIRROR_SECURITY="http://localhost:9999/security/"
+MIRROR_DEBIAN="http://10.254.127.76:3142/debian/"
 MIRROR_BINARY="http://cdn.debian.net/debian/"
-MIRROR_BINARY_SECURITY="http://cdn.debian.net/debian-security/"
 
     #--mirror-debian-installer http://localhost:9999/acervo \
     #--categories "main contrib non-free" \
         #--apt-secure disabled \
 lb config noauto \
     --debian-installer live \
-    --debian-installer-distribution squeeze \
+    --debian-installer-distribution wheezy \
     --debian-installer-gui false \
     --win32-loader true \
-	--distribution squeeze \
+	--distribution wheezy \
     --architecture i386 \
     --archive-areas main \
     --mirror-bootstrap ${MIRROR_DEBIAN} \
 	--mirror-chroot ${MIRROR_DEBIAN} \
-	--mirror-chroot-security ${MIRROR_SECURITY} \
 	--mirror-binary ${MIRROR_BINARY} \
-	--mirror-binary-security ${MIRROR_BINARY_SECURITY} \
     --mirror-debian-installer ${MIRROR_DEBIAN} \
     --security false \
     --apt-recommends true \
@@ -38,10 +34,10 @@ lb config noauto \
     --bootappend-live $BOOTAPPEND \
     --bootappend-install $BOOTAPPEND \
     --binary-indices false \
-    --hostname flujos-vivos \
-	--iso-application "Flujos Vivos" \
-    --iso-volume "flujos-vivos" \
-    --iso-publisher "radio.flujos.org" \
+    --hostname ctp-radio \
+	--iso-application "CTP-Radio" \
+    --iso-volume "ctp-radio" \
+    --iso-publisher "http://ctpcordoba.blogspot.com.ar/" \
     --memtest memtest86+ \
     --net-root-filesystem nfs \
     --net-root-path /srv/debian-live \
@@ -50,5 +46,5 @@ lb config noauto \
     --syslinux-splash "config/binary_syslinux/splash.rle" \
     --syslinux-timeout 4 \
     --syslinux-menu enabled \
-    --username radio \
+    --username operadoris \
     ${@}

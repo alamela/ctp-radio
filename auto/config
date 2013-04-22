@@ -19,12 +19,12 @@ lb config noauto \
     --debian-installer-distribution wheezy \
     --debian-installer-gui false \
     --win32-loader true \
-	--distribution wheezy \
+    --distribution wheezy \
     --architecture i386 \
     --archive-areas main \
     --mirror-bootstrap ${MIRROR_DEBIAN} \
-	--mirror-chroot ${MIRROR_DEBIAN} \
-	--mirror-binary ${MIRROR_BINARY} \
+    --mirror-chroot ${MIRROR_DEBIAN} \
+    --mirror-binary ${MIRROR_BINARY} \
     --mirror-debian-installer ${MIRROR_DEBIAN} \
     --security false \
     --apt-recommends true \
@@ -35,7 +35,7 @@ lb config noauto \
     --bootappend-install $BOOTAPPEND \
     --binary-indices false \
     --hostname ctp-radio \
-	--iso-application "CTP-Radio" \
+    --iso-application "CTP-Radio" \
     --iso-volume "ctp-radio" \
     --iso-publisher "http://ctpcordoba.blogspot.com.ar/" \
     --memtest memtest86+ \

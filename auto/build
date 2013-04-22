@@ -1,7 +1,7 @@
 #!/bin/sh -e
 
 # Static variables
-DISTRIBUTIONS="squeeze"
+DISTRIBUTIONS="wheezy"
 FLAVOURS="-flujos"
 
 # Dynamic variables
@@ -9,7 +9,7 @@ FLAVOURS="-flujos"
 ARCHITECTURE="i386"
 DATE=$(date +%Y%m%d)
 VERSION=1.1a
-NAME="flujos-vivos-${VERSION}-${DISTRIBUTIONS}-${ARCHITECTURE}"
+NAME="ctp-radio-${VERSION}-${DISTRIBUTIONS}-${ARCHITECTURE}"
 ISOHYBRID_OPTS="-entry 4 -type 1c"
 
 genBinary ()

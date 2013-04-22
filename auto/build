@@ -5,10 +5,9 @@ DISTRIBUTIONS="wheezy"
 FLAVOURS="-flujos"
 
 # Dynamic variables
-#ARCHITECTURE="$(dpkg --print-architecture)"
 ARCHITECTURE="i386"
 DATE=$(date +%Y%m%d)
-VERSION=1.1a
+VERSION=0.1a
 NAME="ctp-radio-${VERSION}-${DISTRIBUTIONS}-${ARCHITECTURE}"
 ISOHYBRID_OPTS="-entry 4 -type 1c"
 
@@ -77,5 +76,4 @@ genBinary ()
     esac
 }
         genBinary iso-hybrid 
-        genBinary net 
 

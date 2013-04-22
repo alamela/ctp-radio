@@ -1,10 +1,11 @@
 #!/bin/sh
-BOOTAPPEND="locales=es_AR.UTF-8 keyboard-layout=latam"
+set -e
 
+BOOTAPPEND="boot=live config locales=es_AR.UTF-8 keyboard-layout=latam"
 # menu config
 LB_SYSLINUX_MENU_LIVE_ENTRY="Radio"
 LB_SYSLINUX_MENU_MEMTEST_ENTRY="Verificar RAM"
-LB_SYSLINUX_MENU_LIVE_FAILSAFE_ENTRY="Preuba de fallos"
+LB_SYSLINUX_MENU_LIVE_FAILSAFE_ENTRY="Prueba de fallos"
 
 export LB_SYSLINUX_MENU_LIVE_ENTRY LB_SYSLINUX_MENU_MEMTEST_ENTRY LB_SYSLINUX_MENU_LIVE_FAILSAFE_ENTRY
 
@@ -13,7 +14,8 @@ MIRROR_BINARY="http://cdn.debian.net/debian/"
 
     #--mirror-debian-installer http://localhost:9999/acervo \
     #--categories "main contrib non-free" \
-        #--apt-secure disabled \
+    #--apt-secure disabled \
+
 lb config noauto \
     --debian-installer live \
     --debian-installer-distribution wheezy \
@@ -21,30 +23,21 @@ lb config noauto \
     --win32-loader true \
     --distribution wheezy \
     --architecture i386 \
-    --archive-areas main \
+    --archive-areas "main contrib non-free" \
     --mirror-bootstrap ${MIRROR_DEBIAN} \
     --mirror-chroot ${MIRROR_DEBIAN} \
     --mirror-binary ${MIRROR_BINARY} \
     --mirror-debian-installer ${MIRROR_DEBIAN} \
+    --mode debian \
     --security false \
     --apt-recommends true \
+    --apt-indices false \
     --linux-flavours 486 \
-    --hooks "rm_from_init_d.sh mpd_per.sh" \
-    --language es \
+    --linux-packages "linux-image linux-headers" \
     --bootappend-live $BOOTAPPEND \
     --bootappend-install $BOOTAPPEND \
-    --binary-indices false \
-    --hostname ctp-radio \
     --iso-application "CTP-Radio" \
     --iso-volume "ctp-radio" \
     --iso-publisher "http://ctpcordoba.blogspot.com.ar/" \
     --memtest memtest86+ \
-    --net-root-filesystem nfs \
-    --net-root-path /srv/debian-live \
-    --net-root-server "192.168.1.1" \
-    --net-cow-filesystem "nfs" \
-    --syslinux-splash "config/binary_syslinux/splash.rle" \
-    --syslinux-timeout 4 \
-    --syslinux-menu enabled \
-    --username operadoris \
     ${@}

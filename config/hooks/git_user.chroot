@@ -1,0 +1,10 @@
+#!/bin/sh
+
+#change git user 
+
+if [ -x /usr/bin/git ]
+
+then
+        git config --global user.name "alamela"
+        git config --global user.email alamela@gmail.org
+fi

@@ -1,0 +1,14 @@
+console-setup
+console-common
+kbd
+xfce4
+locales
+gettext
+xserver-xfbdev
+xresprobe
+menu
+alsa-base
+alsa-utils
+keyboard-configuration
+desktop-base
+nodm

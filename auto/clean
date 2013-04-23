@@ -2,17 +2,12 @@
 
 lb clean noauto --all ${@}
 
-rm -f *.log
-
 # Remove generated files
 rm -f config/binary config/bootstrap config/chroot config/common config/source
-rm -fr cache
 rm -f config/control
 
-rm -f build.log
-
 # Remove empty directories in config tree
-find config/ -depth -type d -empty -exec rmdir {} \;
+#find config/ -depth -type d -empty -exec rmdir {} \;
 
 # remove compiled wiki
 #rm -rf config/chroot_local-includes/usr/share/doc/flujos-vivos/html/  wiki/src/.ikiwiki wiki/

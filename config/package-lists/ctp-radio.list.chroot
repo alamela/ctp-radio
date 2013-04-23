@@ -16,8 +16,6 @@ vlc
 ices2
 dropbear
 bash-completion
-system-config-printer
-software-center
 gimp-help-es
 gimp
 inkscape
@@ -30,7 +28,6 @@ gtk2-engines-pixbuf
 transmission
 pidgin-otr
 pidgin
-xfburn
 gftp
 telnet
 less
@@ -40,7 +37,6 @@ thunar-archive-plugin
 soundconverter
 ntfs-3g
 sound-juicer
-ardour
 libasound2-plugins
 exo-utils
 xfce4-volumed
@@ -52,7 +48,6 @@ network-manager-gnome
 xpdf
 screen
 gnash
-lvm2
 bzip2
 nginx
 liquidsoap
@@ -63,3 +58,4 @@ pavucontrol
 pulseaudio-utils
 lame
 mpg123
+dbus-x11

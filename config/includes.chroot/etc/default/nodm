@@ -4,7 +4,7 @@
 NODM_ENABLED=true
 
 # User to autologin for
-NODM_USER=radio
+NODM_USER=operadoris
 
 # xinit program
 NODM_XINIT=/usr/bin/xinit

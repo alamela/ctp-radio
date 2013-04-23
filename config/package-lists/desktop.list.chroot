@@ -10,5 +10,4 @@ menu
 alsa-base
 alsa-utils
 keyboard-configuration
-desktop-base
 nodm
